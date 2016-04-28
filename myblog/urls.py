@@ -21,7 +21,6 @@ from myfirstblog import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index, name='index'),
-    url(r'^home/$', views.homepage, name='homepage'),
     url(r'^about/$', views.about, name='about'),
     url(r'^contact/$', views.contact, name='contact'),
     url(r'^articles/(?P<article_id>[0-9]+)/$', views.show_article, name='article')

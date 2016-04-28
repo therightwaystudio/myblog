@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
 
 {% block title %}
-Article
+{{ article.title }}
 {% endblock %}
 
 {% block content %}
-<article>{{ article.text }}</article>
+    <h1>{{ article.title }}</h1>
+    <article>{{ article.text }}</article>
+    <text>{{ article.user }},</text>
+    <tiem>{{ article.published_date}}</tiem>
 {% endblock %}

@@ -8,5 +8,15 @@
     {% for article in articles %}
         <h4><a href="{% url 'article' article.id %}">{{ article.title }}</a></h4>
         <article>{{ article.text }}</article>
+        <text>{{ article.user }},</text>
+        <time>{{ article.published_date }}</time>
     {% endfor %}
+
+
+        <h2>New post</h2>
+            <form method="POST" class="post-form">{% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="save btn btn-default">Save</button>
+            </form>
+
 {% endblock %}

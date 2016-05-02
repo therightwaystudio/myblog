@@ -16,13 +16,16 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from myfirstblog import views
-
+from django.contrib.auth.views import login,logout
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index, name='index'),
     url(r'^about/$', views.about, name='about'),
     url(r'^contact/$', views.contact, name='contact'),
-    url(r'^articles/(?P<article_id>[0-9]+)/$', views.show_article, name='article')
+    url(r'^articles/(?P<article_id>[0-9]+)/$', views.show_article, name='article'),
+    url(r'^login/$', login, name='login'),
+    url(r'^logout/$', logout, name='logout'),
+    url(r'^register/$', views.register, name='register'),
 ]
 

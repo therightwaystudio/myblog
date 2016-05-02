@@ -6,10 +6,12 @@
 
 {% block content %}
     {% for article in articles %}
-        <h4><a href="{% url 'article' article.id %}">{{ article.title }}</a></h4>
-        <article>{{ article.text }}</article>
-        <text>{{ article.user }},</text>
-        <time>{{ article.published_date }}</time>
+        <div class="article">
+            <h4><a href="{% url 'article' article.id %}">{{ article.title }}</a></h4>
+            <article>{{ article.text }}</article>
+            <text>{{ article.user }},</text>
+            <time>{{ article.published_date }}</time>
+        </div>
     {% endfor %}
 
 

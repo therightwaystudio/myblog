@@ -5,6 +5,14 @@ About
 {% endblock %}
 
 {% block content %}
-    <h2>About me</h2>
-    <a href="https://vk.com/m.romanovsky">Just click</a>
+    <h2>Test project</h2>
+    <a href="https://vk.com/m.romanovsky">My VK page</a>
+
+    {% if user.is_authenticated %}
+    <p>Добро пожаловать, {{ user.username }}. Спасибо, что зашли.</p>
+    {% else %}
+    <p>Добро пожаловать, незнакомец. Пожалуйста, назовите себя.</p>
+    {% endif %}
+
+
 {% endblock %}
